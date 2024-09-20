@@ -2,10 +2,6 @@ export type City =   "Eura" | "Eurajoki" | "Harjavalta" | "Huittinen" |
 "Jämijärvi" | "Kankaanpää" | "Karvia" | "Kokemäki" |"Merikarvia" | "Nakkila" | 
 "Pomarkku" | "Pori" | "Rauma" | "Siikainen" | "Säkylä" | "Ulvila" | "Muu";
 
-// export type AgeRange = { min: 0, max: 19 } | { min: 20, max: 39 } | 
-// { min: 40, max: 49 } | { min: 50, max: 59 } | { min: 60, max: 69 } | 
-// { min: 70, max: 79 } | { min: 80, max: 89 } |{ min: 90, max: 100 }
-
 export type AgeRange = "0-19" | "20-39" |  "40-49" |  "50-59" | 
 "60-69" |  "70-79" | "80-89" | "90+" | "Ei tietoa";
 
