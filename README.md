@@ -1,6 +1,12 @@
 # Relaamo log-system
 
+## Before start
+
+* Remember: <b>Use only the dev branch</b>
+* You need to have Firebase CLI to deploy the app (see https://firebase.google.com/docs/cli)
+ 
 ## Get started
+
 ### Install dependencies
 ```
 npm install
