@@ -38,6 +38,7 @@
 {#if !manualTime}
   <Button size="small" on:click={() => manualTime = true} style="margin-bottom: 1rem;">Syötä ajat</Button>
 {/if}
+
 <DatePicker bind:dateValue name="date" label="Päivämäärä" />
 
 {#if manualTime}
