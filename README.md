@@ -1,9 +1,10 @@
 # Relaamo log-system
 
-## Before start
+## 3rd party documentation
 
-* Remember: <b>Use only the dev branch</b>
-* You need to have Firebase CLI to deploy the app (see https://firebase.google.com/docs/cli)
+* UI-library: https://flowbite-svelte.com/docs/pages/introduction
+* Firebase Realtime Database: https://firebase.google.com/docs/database/web/start
+* Firebase Authentication: https://firebase.google.com/docs/auth/web/start
  
 ## Get started
 
@@ -36,10 +37,12 @@ npm run build
 ```
 
 ## Build and deploy to Firebase Hosting
+
 ```
 npm run deploy
 ```
-You have to have Firebase CLI installed. Remember to login too.
+
+You need to have Firebase CLI to deploy the app (see https://firebase.google.com/docs/cli).
 
 
 
