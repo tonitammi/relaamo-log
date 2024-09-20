@@ -37,4 +37,28 @@ You have to have Firebase CLI installed. Remember to login too.
 
 
 
+## In case of an emergency
+
+### Situation 1.
+
+You have deployed app to Firebase hosting. After that you found out that there is major bug.
+
+#### Solution
+```
+npm run rollback
+```
+
+This will rollback the previously deployed version to hosting (hopefully working one).
+
+### Other situations
+
+#### Solution 1
+```
+Ask ChatGPT or check Google
+```
+
+#### Solution 2
+```
+Pray
+```
 
