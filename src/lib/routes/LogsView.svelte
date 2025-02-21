@@ -9,7 +9,6 @@
   import { push } from "svelte-spa-router";
 
   export let params: { tab: "events" | "logs" |undefined };
-  $pageTitle = "Selaa kirjauksia";
 
   let tabToShow: "events" | "logs" = params.tab || "logs";
 
@@ -20,6 +19,7 @@
   let loadingEvents: boolean = true;
 
   $: logsToShow = logs;
+  $pageTitle = "Selaa kirjauksia";
 
   const handleTabChange = (e: Event) => {
     const select = e.target as HTMLSelectElement;

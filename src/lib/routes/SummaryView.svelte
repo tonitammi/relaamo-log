@@ -44,7 +44,6 @@
   onMount(() => {
     const unsubscribe = createListener<LogData>("/funteeraamo/logs", (data) => {
       logs = data;
-      console.log(data);
     });
 
     const unsubscribeEvents = createListener<EventLogData>("/funteeraamo/events", (data) => {
@@ -61,7 +60,6 @@
 <h2>Yhteenveto</h2>
 
 <div class="container">
-  <!-- <Button on:click={addUsers}>Add users</Button> -->
   {#if logs.length > 0}
     <SummaryCard>
       <Summary data={logs} />

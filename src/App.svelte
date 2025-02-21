@@ -17,6 +17,7 @@
 
   onMount(async () => {
     const data = await getFromDb<{[k: string] : LogData}>("funteeraamo/logs", 50);
+    console.log("App.ts data", data)
     if(data) {
       $logDataStore = dbObjToArr<LogData>(data);
     }

@@ -3,22 +3,24 @@
   export let type: "button" | "submit" = "button";
   export let mode: "primary" | "secondary" | "warning" | "clear" = "primary";
   export let size: "normal" | "small" = "normal";
-  export let disabled: boolean = false;
+  export let disabled: boolean | null = false;
   export let style: string = "";
   export let oneLine: boolean = false;
 </script>
 
 {#if href}
   <a 
-    {href} 
-    class="{size} {oneLine ? "one-line" : ""}" 
+    href={disabled ? "javascript:void(0)" : href} 
+    class="{size} {oneLine ? "one-line" : ""} {disabled ? "disabled" : ""}" 
     style="background: var(--{mode}); color: var(--{mode}-text); {style}"
+    title={disabled ? "Toiminto ei käytössä lukuoikeuksilla" : "Poista kirjaus"}
   >
     <slot />
   </a>
 {:else}
   <button 
     class="{size} {oneLine ? "one-line" : ""}" 
+    title={disabled ? "Toiminto ei käytössä lukuoikeuksilla" : "Muokkaa kirjausta"}
     {disabled} 
     {type} 
     on:click 
@@ -48,7 +50,7 @@
     border-radius: 8px;
   }
 
-  a:disabled, button:disabled {
+  a:disabled, button:disabled, .disabled  {
     opacity: 0.8;
     cursor: not-allowed;
   }

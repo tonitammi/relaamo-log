@@ -5,6 +5,7 @@ import MainView from "./MainView.svelte";
 import ExportView from "./ExportView.svelte";
 import SummaryView from "./SummaryView.svelte";
 import JsonView from "./JsonView.svelte";
+import CsvView from "./CsvView.svelte";
 
 export const routes = {
   "/": MainView,
@@ -13,5 +14,6 @@ export const routes = {
   "/luo-tapahtuma-kirjaus/:editKey?": EventLogView,
   "/hae-data": ExportView,
   "/yhteenveto": SummaryView,
-  "/json": JsonView
+  "/data-export": JsonView,
+  "/csv-test": CsvView
 }

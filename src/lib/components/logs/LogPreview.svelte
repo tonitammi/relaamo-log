@@ -4,12 +4,16 @@
   import { deleteFromDb } from "../../scripts/db";
   import { getTimeString } from "../datetime/utils";
   import { createToast } from "../toast";
+  import { onMount } from "svelte";
+  import { user } from "../../scripts/stores";
+  import { getFinnishLendingCategory } from "../../scripts/data";
   import Button from "../shared/Button.svelte";
   import Icon from "../shared/Icon.svelte";
-  import { onMount } from "svelte";
-  import { getFinnishLendingCategory } from "../../scripts/data";
+  import { hasWriteAccess } from "../auth/auth";
 
   export let data: LogData;
+
+  $: writeAccess = hasWriteAccess($user);
 
   let startTime: string = getTimeString(data.startTime);
   let endTime: string = getTimeString(data.endTime);
@@ -75,11 +79,11 @@
   {/if}
 
   <div class="right">
-    <Button size="small" mode="warning" on:click={removeLog}>
+    <Button size="small" mode="warning" on:click={removeLog} disabled={!writeAccess}>
       <Icon name="clear" size="20" />
       Poista
     </Button>
-    <Button size="small" href="/#/luo-kirjaus/{data.key}">
+    <Button size="small" href="/#/luo-kirjaus/{data.key}" disabled={!writeAccess}>
       <Icon name="edit" size="20" />
       Muokkaa kirjausta
     </Button>

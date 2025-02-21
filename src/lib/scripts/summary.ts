@@ -2,10 +2,8 @@ import { getWeekDayString } from "../components/datetime/utils";
 import type { LogData, EventLogData,TargetKey, LendingKey } from "../types/data"
 import { ageRanges, cities, getFinnishLendingCategory, subjectOfGuidance, targetGroup } from "./data"
 
-// utils
 
 // events
-
 export const getTotalEventParticipants = (data: EventLogData[]) => {
   let sum = 0;
   data.forEach(d => sum += d.amount);
@@ -145,6 +143,7 @@ export const getCityCustomers = (data: LogData[]) => {
   const arr: {city: string, amount: number}[] = [];
 
   cities.forEach(city => obj[city] = 0);
+  
   data.forEach(({ city, targetGroup }) => {
     obj[city!] = obj[city!] + targetGroup.customer.amount;
   });
@@ -277,7 +276,6 @@ export const getFollowUps = (data: LogData[]) => {
     }
   }
 
-  console.log(arr);
   return arr;
 }
 

@@ -69,13 +69,6 @@ const validateTargetGroup =
   setErrors(errors);
 }
 
-// const validateFollowUp = (data: LogData, setErrors: (er: string[]) => void) => {
-//   if(data.followUp.done) {
-//     if(!data.followUp.place)
-//   }
-// }
-
-
 export const validateLogData = 
 (data: LogData): {status: boolean, errors: string[]} => {
   let errors: string[] = [];
