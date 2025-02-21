@@ -1,5 +1,5 @@
 import type { LogData, EventLogData, LendingKey, SubjectKey } from "../types/data";
-import { finnishLendingCategories, targetGroup } from "./data";
+import { finnishLendingCategories, finnishSubjectKeys, targetGroup } from "./data";
 
 export const formatData = (data: LogData) => {
   const formattedData = structuredClone(data);
@@ -18,21 +18,13 @@ export const formatData = (data: LogData) => {
   return formattedData;
 }
 
-const subjectFinnishKeys = {
-  hearing_aids: "Kuulemisen apuvälineet",
-  vision_aids: "Näkemisen apuvälineet",
-  safety_aids: "Turvallisuuden apuvälineet",
-  memory_aids: "Muistin apuvälineet",
-  other: "Muut apuvälineet",
-}
-
 export const getSubjectsString = (data: LogData) => {
   const subjects = data.subject;
   const arr = [];
 
   for(const key in subjects) {
     if(subjects[key as SubjectKey]) {
-      arr.push(subjectFinnishKeys[key as SubjectKey]);
+      arr.push(finnishSubjectKeys[key as SubjectKey]);
     }
   }
   return arr.join(", ");

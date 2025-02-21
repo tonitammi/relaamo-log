@@ -69,6 +69,14 @@ export const finnishLendingCategories = [
   {key: "other", label: "Muut apuvälineet"}
 ];
 
+export const finnishSubjectKeys = {
+  hearing_aids: "Kuulemisen apuvälineet",
+  vision_aids: "Näkemisen apuvälineet",
+  safety_aids: "Turvallisuuden apuvälineet",
+  memory_aids: "Muistin apuvälineet",
+  other: "Muut apuvälineet",
+}
+
 export const getFinnishLendingCategory = (key: string) => {
   const category = finnishLendingCategories.find(x => x.key === key);
 
