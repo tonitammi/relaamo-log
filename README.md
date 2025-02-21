@@ -2,7 +2,6 @@
 
 ## 3rd party documentation
 
-* UI-library: https://flowbite-svelte.com/docs/pages/introduction
 * Firebase Realtime Database: https://firebase.google.com/docs/database/web/start
 * Firebase Authentication: https://firebase.google.com/docs/auth/web/start
  
